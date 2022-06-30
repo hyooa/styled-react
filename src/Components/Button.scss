@@ -1,0 +1,116 @@
+$blue : #225be6;
+$gray : #495059;
+$pink : #f06595;
+
+@mixin button-color($color) {
+    background: $color;
+    &:hover {
+        background: darken($color, 20%);
+    }
+
+    &.outline {
+        color: $color;
+        background: none;
+        border: 2px solid $color;
+        &:hover {
+            background: $color;
+            color: #fff;
+        }
+    }
+}
+
+.button {
+    color: #fff;
+    font-weight: bold;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    // background: $blue;
+    margin: 10px;
+
+    @include button-color($blue);
+
+    // 사이즈 관리
+    &.large {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 360px;
+    }
+    &.medium {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 240px;
+    }
+    &.small {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 160px;
+    }
+
+    // 색상 관리
+    &.pink {
+        @include button-color($pink);
+        // background: $pink;
+        // &:hover {
+        //     background: darken($color: $pink, $amount: 20%);
+        // }
+    }
+    &.black {
+        @include button-color($gray);
+        // background: $gray;
+        // &:hover {
+        //     background: darken($color: $gray, $amount: 20%);
+        // }
+    }
+
+    &.fullWidth {
+        width: 100%;
+        &+& {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    // 길이
+    // &.long {
+    //     width: 900px;
+    // }
+    
+    // &:hover {
+    //     background: darken($color: $blue, $amount: 20%);
+    // }
+
+
+    // 폰트
+    // &.fontBlue {
+    //     border: 3px solid #225be6;
+    //     color: #225be6;
+    //     background: #fff;
+    //     &:hover {
+    //         @include button-color($blue);
+    //         // background: lighten($color: #225be6, $amount: 20%);
+    //     }
+    // }
+    // &.fontPink {
+    //     border: 3px solid $pink;
+    //     color: $pink;
+    //     background: #fff;
+    //     &:hover {
+    //         @include button-color($pink);
+    //         // background: lighten($color: $pink, $amount: 5%);
+    //     }
+    // }
+    // &.fontBlack {
+    //     border: 3px solid $gray;
+    //     color: $gray;
+    //     background: #fff;
+    //     &:hover {
+    //         @include button-color($gray);
+    //         // background: lighten($color: $gray, $amount: 20%);
+    //     }
+    // }
+
+}

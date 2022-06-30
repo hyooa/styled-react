@@ -1,0 +1,16 @@
+.App {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 80px;
+  border: 1px solid black;
+  padding: 20px;
+}
+.App > div {
+  display: flex;
+}
+#long {
+  display: block;
+}
+
+
+
